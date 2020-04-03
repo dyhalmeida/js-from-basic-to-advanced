@@ -32,7 +32,7 @@ const peoples = [
   { name: 'Alberto', age: 22 },
   { name: 'Ricardo', age: 33 },
 ]
-/** Retornar a pessoa mais velha */
+/** Retornar a pessoa mais velha do array de objetos */
 const older = peoples.reduce((accumulator, obj) => {
   if (accumulator.age > obj.age) {
     return accumulator;
