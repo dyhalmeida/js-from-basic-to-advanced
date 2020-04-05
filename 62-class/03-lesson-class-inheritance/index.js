@@ -4,6 +4,19 @@ class Device {
     this.on = false;
   }
 
+  /** Método estático
+   * Não possui acesso a método de instância
+   * e é somente acessando através da classe
+   * diretamente sem ser instânciada.
+   * 
+   * Objetos instânciados não possui acesso a métodos
+   * estáticos
+   */
+  static manufacturingDate() {
+    return new Date();
+  }
+
+  /** Métodos de instância */
   enable() {
     if (this.on) {
       console.log(`${this.name} já está ligado`);
@@ -20,6 +33,9 @@ class Device {
     this.on = false;
   }
 }
+
+/** Método estático */
+console.log(Device.manufacturingDate());
 
 /** Herança */
 class Smartphenablee extends Device {
