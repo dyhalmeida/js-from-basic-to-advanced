@@ -33,19 +33,18 @@ document.addEventListener('click', event => {
 });
 
 
-function loadPage(element) {
+async function loadPage(element) {
   const href = element.getAttribute('href');
   const reqConfig = {
     method: 'GET',
     url: href
   }
-  request(reqConfig)
-    .then(data => {
-      showPage(data);
-    })
-    .catch(e => {
-      console.error(e);
-    })
+  try {
+    const data = await request(reqConfig);
+    showPage(data);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function showPage(data) {
